@@ -13,37 +13,60 @@
             --light: #f8fafc;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
-        body { background-color: var(--light); color: var(--dark); line-height: 1.6; padding-top: 55px; }
+        body { background-color: var(--light); color: var(--dark); line-height: 1.6; padding-top: 65px; }
         
-        /* الشريط الثابت في أعلى الصفحة */
+        /* الشريط الثابت في أعلى الصفحة مع الشعار العائم */
         .top-bar {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             background: #ffffff;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             align-items: center;
-            padding: 8px 12px;
+            padding: 8px 15px;
             z-index: 1000;
             border-bottom: 1px solid #e2e8f0;
+        }
+
+        /* تصميم الشعار العائم في الأعلى */
+        .floating-logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .floating-logo img {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        }
+
+        .top-actions {
+            display: flex;
+            gap: 8px;
+            flex: 1;
+            justify-content: flex-end;
+            margin-right: 10px;
         }
 
         .top-btn {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 6px;
+            gap: 4px;
             padding: 7px 12px;
             border-radius: 20px;
             text-decoration: none;
             color: white;
             font-weight: bold;
-            font-size: 13px;
-            flex: 1;
-            max-width: 48%;
+            font-size: 12px;
         }
 
         /* الهيدر الرئيسي */
@@ -148,14 +171,20 @@
 </head>
 <body>
 
-    <!-- الشريط الثابت العلوي -->
+    <!-- الشريط الثابت العلوي مع الشعار العائم -->
     <div class="top-bar">
-        <a href="tel:0540774058" class="top-btn btn-call-top">
-            <span>📞 اتصال: 0540774058</span>
+        <a href="#" class="floating-logo">
+            <!-- استبدل رابط الصورة أدناه برابط شعارك الخاص -->
+            <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=100&q=80" alt="شعار المؤسسة">
         </a>
-        <a href="https://wa.me/966540774058" class="top-btn btn-wa-top">
-            <span>💬 واتساب مباشر</span>
-        </a>
+        <div class="top-actions">
+            <a href="tel:0540774058" class="top-btn btn-call-top">
+                <span>📞 0540774058</span>
+            </a>
+            <a href="https://wa.me/966540774058" class="top-btn btn-wa-top">
+                <span>💬 واتساب</span>
+            </a>
+        </div>
     </div>
 
     <!-- الهيدر -->
@@ -254,7 +283,7 @@
         <div class="spacer"></div>
     </div>
 
-    <!-- الأزرار العائمة الدائرية في الأسفل (يمين: اتصال | يسار: واتساب) -->
+    <!-- الأزرار العائمة الدائرية في الأسفل -->
     <div class="floating-buttons-container">
         <!-- زر الاتصال الدائري (على اليمين) -->
         <a href="tel:0540774058" class="circle-btn btn-call-circle" title="اتصال مباشر">
