@@ -15,33 +15,38 @@
         body { background-color: var(--light); color: var(--dark); line-height: 1.6; }
         
         /* الهيدر الرئيسي */
-        .header { background: var(--primary); color: white; padding: 35px 20px; text-align: center; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; }
-        .header h1 { font-size: 24px; margin-bottom: 8px; }
-        .header p { opacity: 0.9; font-size: 14px; }
+        .header { background: var(--primary); color: white; padding: 40px 20px; text-align: center; border-bottom-left-radius: 24px; border-bottom-right-radius: 24px; }
+        .header h1 { font-size: 26px; margin-bottom: 8px; }
+        .header p { opacity: 0.9; font-size: 15px; }
 
         .container { max-width: 600px; margin: auto; padding: 15px; }
         
-        /* الأقسام الستة */
-        .section-title { text-align: center; margin: 20px 0 15px; color: var(--primary); font-size: 20px; }
+        .section-title { text-align: center; margin: 25px 0 15px; color: var(--primary); font-size: 22px; }
         
-        .service-card { background: white; padding: 18px; border-radius: 14px; margin-bottom: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); display: flex; justify-content: space-between; align-items: center; border-right: 4px solid var(--primary); }
-        .service-info h3 { font-size: 16px; color: var(--dark); margin-bottom: 4px; }
-        .service-info p { font-size: 13px; color: #64748b; }
+        /* كروت الخدمات */
+        .service-card { background: white; border-radius: 16px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); overflow: hidden; border: 1px solid #e2e8f0; }
+        .service-img { width: 100%; height: 200px; object-fit: cover; display: block; }
+        .service-content { padding: 20px; }
+        .service-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+        .service-header h3 { font-size: 18px; color: var(--primary); }
         
-        .call-icon-btn { background: #eff6ff; color: var(--primary); width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 18px; flex-shrink: 0; }
+        .call-icon-btn { background: #eff6ff; color: var(--primary); width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 18px; font-weight: bold; }
+        
+        .service-desc { font-size: 14px; color: #475569; text-align: justify; line-height: 1.7; }
 
         /* مميزات العمل */
-        .features-card { background: white; padding: 20px; border-radius: 14px; margin-top: 20px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-        .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
-        .feature-item { background: #f1f5f9; padding: 10px; border-radius: 8px; font-size: 13px; font-weight: bold; color: var(--primary); }
+        .features-card { background: white; padding: 20px; border-radius: 16px; margin: 25px 0; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px; }
+        .feature-item { background: #f1f5f9; padding: 12px; border-radius: 10px; font-size: 14px; font-weight: bold; color: var(--primary); }
 
-        /* الأزرار العائمة في أسفل الشاشة */
-        .floating-cta { position: fixed; bottom: 0; left: 0; right: 0; background: white; padding: 10px 15px; box-shadow: 0 -4px 15px rgba(0,0,0,0.1); display: flex; gap: 10px; z-index: 1000; }
-        .btn { flex: 1; text-align: center; padding: 12px; border-radius: 10px; font-weight: bold; text-decoration: none; font-size: 15px; display: flex; align-items: center; justify-content: center; gap: 6px; }
-        .btn-call { background: var(--primary); color: white; }
-        .btn-whatsapp { background: var(--accent); color: white; }
+        /* الأزرار العائمة الدائرية */
+        .floating-buttons { position: fixed; bottom: 20px; left: 20px; display: flex; flex-direction: column; gap: 12px; z-index: 1000; }
+        .circle-btn { width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.25); color: white; transition: transform 0.2s; }
+        .circle-btn:active { transform: scale(0.9); }
+        .btn-call-circle { background-color: var(--primary); }
+        .btn-whatsapp-circle { background-color: var(--accent); }
 
-        .spacer { height: 60px; }
+        .spacer { height: 80px; }
     </style>
 </head>
 <body>
@@ -49,70 +54,88 @@
     <!-- الهيدر -->
     <div class="header">
         <h1>معلم دهانات وديكورات بالرياض</h1>
-        <p>تنفيذ كافة أعمال الدهانات والديكورات الحديثة بأعلى جودة</p>
+        <p>خبرة طويلة في تنفيذ كافة أعمال الدهانات والديكورات بأعلى معايير الجودة</p>
     </div>
 
     <div class="container">
         
-        <h2 class="section-title">أقسام الخدمات</h2>
+        <h2 class="section-title">أقسام الخدمات الشاملة</h2>
 
         <!-- القسم 1 -->
         <div class="service-card">
-            <div class="service-info">
-                <h3>1. الدهانات الداخلية</h3>
-                <p>تنفيذ أحدث دهانات السادة والتعتيق والترخيم (جوتن - الجزيرة).</p>
+            <img src="https://images.unsplash.com/photo-1562663474-6cbb3eaa4d14?auto=format&fit=crop&w=600&q=80" alt="الدهانات الداخلية" class="service-img">
+            <div class="service-content">
+                <div class="service-header">
+                    <h3>1. الدهانات الداخلية والديكورية</h3>
+                    <a href="tel:0540774058" class="call-icon-btn" title="اتصال مباشر">📞</a>
+                </div>
+                <p class="service-desc">نقدم خدمات تنفيذ الدهانات الداخلية للشقق والفلل والمكاتب باستخدام أفضل المنتجات العالمية مثل جوتن والجزيرة. تشمل خدماتنا الدهانات السادة بألوانها العصرية، إضافة إلى التعتيق، الترخيم، والتأثيرات الديكورية الخاصة التي تضفي لمسة فخامة وأناقة على مجالسكم وغرفكم مع ضمان ثبات الألوان وسهولة التنظيف.</p>
             </div>
-            <a href="tel:0540774058" class="call-icon-btn" title="اتصال مباشر">📞</a>
         </div>
 
         <!-- القسم 2 -->
         <div class="service-card">
-            <div class="service-info">
-                <h3>2. الدهانات الخارجية والبروفايل</h3>
-                <p>رشات خارجية للواجهات، بروفايل، ومقاومة للعوامل الجوية.</p>
+            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80" alt="الدهانات الخارجية والبروفايل" class="service-img">
+            <div class="service-content">
+                <div class="service-header">
+                    <h3>2. الدهانات الخارجية والبروفايل</h3>
+                    <a href="tel:0540774058" class="call-icon-btn" title="اتصال مباشر">📞</a>
+                </div>
+                <p class="service-desc">متخصصون في تشطيب واجهات المباني والفلل بالكامل بأفضل أنواع الرشات المحببة والبروفايل مقاوم الرطوبة والحرارة العالية بالرياض. نضمن حماية المبنى الخاص بك من العوامل الجوية المختلفة كالأمطار والشمس المباشرة، مع تقديم تشكيلة واسعة من الألوان والتصاميم الخارجية المعمارية الراقية.</p>
             </div>
-            <a href="tel:0540774058" class="call-icon-btn" title="اتصال مباشر">📞</a>
         </div>
 
         <!-- القسم 3 -->
         <div class="service-card">
-            <div class="service-info">
-                <h3>3. تركيب الفوم وبديل الرخام</h3>
-                <p>ديكورات شاشات، بديل الرخام، وبديل الخشب بأحدث التصاميم.</p>
+            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=600&q=80" alt="تركيب الفوم وبديل الرخام" class="service-img">
+            <div class="service-content">
+                <div class="service-header">
+                    <h3>3. تركيب الفوم وبديل الرخام والخشب</h3>
+                    <a href="tel:0540774058" class="call-icon-btn" title="اتصال مباشر">📞</a>
+                </div>
+                <p class="service-desc">نوفر ونركب أحدث أنواع ديكورات الفوم، بديل الرخام، وبديل الخشب لتصميم خلفيات الشاشات والصالات والمداخل بطرق مبتكرة. تتميز منتجاتنا بالجودة العالية، مقاومة الماء والحرارة، وخفة الوزن مقارنة بالرخام الطبيعي، مما يمنح منزلك طابعاً كلاسيكياً أو مودرن بتكلفة مناسبة جداً.</p>
             </div>
-            <a href="tel:0540774058" class="call-icon-btn" title="اتصال مباشر">📞</a>
         </div>
 
         <!-- القسم 4 -->
         <div class="service-card">
-            <div class="service-info">
-                <h3>4. معالجة الرطوبة والتشققات</h3>
-                <p>حلول جذرية لشرخ الجدران وتسريبات الرطوبة قبل الدهان.</p>
+            <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=600&q=80" alt="معالجة الرطوبة والتشققات" class="service-img">
+            <div class="service-content">
+                <div class="service-header">
+                    <h3>4. معالجة الرطوبة وتشققات الجدران</h3>
+                    <a href="tel:0540774058" class="call-icon-btn" title="اتصال مباشر">📞</a>
+                </div>
+                <p class="service-desc">نقدم معالجة هندسية واحترافية لكافة مشكلات الرطوبة وتمليح الجدران وتقشير الدهانات، بالإضافة إلى ترميم الشقوق والشروخ قبل إعادة الدهان. نستخدم أفضل المواد العازلة والأساسات المقاومة لضمان عزل الحوائط بشكل كامل وحماية جدران منزلك من التلف المباشر مستقبلاً.</p>
             </div>
-            <a href="tel:0540774058" class="call-icon-btn" title="اتصال مباشر">📞</a>
         </div>
 
         <!-- القسم 5 -->
         <div class="service-card">
-            <div class="service-info">
-                <h3>5. تركيب ورق الجدران</h3>
-                <p>تركيب كافة أنواع وأشكال ورق الحائط كلاسيك ومودرن.</p>
+            <img src="https://images.unsplash.com/photo-1615873968403-89e068629265?auto=format&fit=crop&w=600&q=80" alt="تركيب ورق الجدران" class="service-img">
+            <div class="service-content">
+                <div class="service-header">
+                    <h3>5. تركيب ورق الجدران بمختلف أنواعه</h3>
+                    <a href="tel:0540774058" class="call-icon-btn" title="اتصال مباشر">📞</a>
+                </div>
+                <p class="service-desc">نتميز بتركيب ورق الحائط بأحدث الموديلات ثلاثية الأبعاد (3D)، الموديل الكلاسيكي، والعصري بدقة متناهية وبدون وجود أي فراغات أو عيوب في التركيب. نعمل على تجهيز وصنفرة الجدار أولاً لضمان التثبيت القوي واستدامة ورق الجدران لأطول فترة ممكنة دون تأثر.</p>
             </div>
-            <a href="tel:0540774058" class="call-icon-btn" title="اتصال مباشر">📞</a>
         </div>
 
         <!-- القسم 6 -->
         <div class="service-card">
-            <div class="service-info">
-                <h3>6. ترميم ودهان الشقق والفلل</h3>
-                <p>تجديد شامل لدهانات المنازل والفلل والمحلات التجارية.</p>
+            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=600&q=80" alt="ترميم ودهان المنازل" class="service-img">
+            <div class="service-content">
+                <div class="service-header">
+                    <h3>6. ترميم وتجديد دهانات الشقق والفلل</h3>
+                    <a href="tel:0540774058" class="call-icon-btn" title="اتصال مباشر">📞</a>
+                </div>
+                <p class="service-desc">خدمة إعادة دهان وترميم مبانيك القديمة والمستعملة وتحويلها إلى شكل جديد كلياً. نقوم بنقل الأثاث وحمايته قبل بدء العمل، والاهتمام بالنظافة التامة للموقع بعد الانتهاء، مع الحرص على الدقة في المواعيد وإنجاز تسليم الشقق والفلل في الوقت المحدد تماماً.</p>
             </div>
-            <a href="tel:0540774058" class="call-icon-btn" title="اتصال مباشر">📞</a>
         </div>
 
         <!-- مميزات -->
         <div class="features-card">
-            <h3 style="color: var(--primary); font-size: 16px;">لماذا تختارنا؟</h3>
+            <h3 style="color: var(--primary); font-size: 18px;">لماذا نعد الخيار الأفضل بالرياض؟</h3>
             <div class="features-grid">
                 <div class="feature-item">سرعة ودقة التنفيذ</div>
                 <div class="feature-item">أسعار مناسبة للجميع</div>
@@ -124,10 +147,10 @@
         <div class="spacer"></div>
     </div>
 
-    <!-- الأزرار العائمة الثابتة بالأسفل -->
-    <div class="floating-cta">
-        <a href="tel:0540774058" class="btn btn-call">📞 اتصال 0540774058</a>
-        <a href="https://wa.me/966540774058" class="btn btn-whatsapp">💬 واتساب</a>
+    <!-- الأزرار العائمة الدائرية في الأسفل -->
+    <div class="floating-buttons">
+        <a href="https://wa.me/966540774058" class="circle-btn btn-whatsapp-circle" title="تواصل واتساب">💬</a>
+        <a href="tel:0540774058" class="circle-btn btn-call-circle" title="اتصال مباشر">📞</a>
     </div>
 
 </body>
