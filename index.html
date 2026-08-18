@@ -8,12 +8,12 @@
         :root {
             --primary: #1e3a8a;
             --primary-light: #eff6ff;
-            --accent: #25d366;
+            --whatsapp-green: #25d366;
             --dark: #0f172a;
             --light: #f8fafc;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
-        body { background-color: var(--light); color: var(--dark); line-height: 1.6; padding-top: 60px; /* مسافة للشريط العلوي الثابت */ }
+        body { background-color: var(--light); color: var(--dark); line-height: 1.6; padding-top: 55px; }
         
         /* الشريط الثابت في أعلى الصفحة */
         .top-bar {
@@ -22,7 +22,7 @@
             left: 0;
             right: 0;
             background: #ffffff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
             display: flex;
             justify-content: space-around;
             align-items: center;
@@ -36,7 +36,7 @@
             align-items: center;
             justify-content: center;
             gap: 6px;
-            padding: 8px 16px;
+            padding: 7px 12px;
             border-radius: 20px;
             text-decoration: none;
             color: white;
@@ -62,7 +62,7 @@
         .service-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
         .service-header h3 { font-size: 17px; color: var(--primary); }
         
-        /* شارة الرقم المباشر (زهرة قنص) داخل الكروت */
+        /* شارة الرقم المباشر داخل الكروت */
         .phone-badge { 
             background: #fff0f0; 
             color: #d97706; 
@@ -85,61 +85,76 @@
         .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px; }
         .feature-item { background: #f1f5f9; padding: 12px; border-radius: 10px; font-size: 14px; font-weight: bold; color: var(--primary); }
 
-        /* الشريط الثابت في أسفل الصفحة */
-        .bottom-bar { 
-            position: fixed; 
-            bottom: 0; 
-            left: 0; 
-            right: 0; 
-            background: #ffffff;
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            padding: 10px 15px;
-            z-index: 1000; 
-            border-top: 1px solid #e2e8f0;
+        /* الأزرار العائمة الدائرية الحديثة أسفل الصفحة */
+        .floating-buttons-container {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 9999;
+            pointer-events: none;
         }
 
-        .app-btn { 
-            display: flex; 
-            align-items: center; 
+        .circle-btn {
+            pointer-events: auto;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
             justify-content: center;
-            gap: 8px; 
-            padding: 10px 16px; 
-            border-radius: 30px; 
-            text-decoration: none; 
-            color: white; 
-            font-weight: bold; 
-            font-size: 14px; 
-            flex: 1;
-            margin: 0 5px;
-            transition: transform 0.2s, box-shadow 0.2s;
+            text-decoration: none;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
-        .app-btn:active, .top-btn:active { transform: scale(0.95); }
-
-        /* ألوان الأزرار */
-        .btn-call { 
-            background: linear-gradient(135deg, #1e3a8a, #3b82f6); 
+        .circle-btn:active {
+            transform: scale(0.9);
         }
 
-        .btn-whatsapp { 
-            background: linear-gradient(135deg, #25d366, #128c7e); 
+        /* زر اتصال دائري على اليمين */
+        .btn-call-circle {
+            background: linear-gradient(135deg, #1e3a8a, #2563eb);
+            color: white;
         }
 
-        .spacer { height: 70px; }
+        .btn-call-circle svg {
+            width: 28px;
+            height: 28px;
+            fill: currentColor;
+        }
+
+        /* زر واتساب دائري حديث على اليسار */
+        .btn-wa-circle {
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            color: white;
+        }
+
+        .btn-wa-circle svg {
+            width: 32px;
+            height: 32px;
+            fill: currentColor;
+        }
+
+        /* ألوان أزرار الشريط العلوي */
+        .btn-call-top { background: linear-gradient(135deg, #1e3a8a, #3b82f6); }
+        .btn-wa-top { background: linear-gradient(135deg, #25d366, #128c7e); }
+
+        .spacer { height: 80px; }
     </style>
 </head>
 <body>
 
     <!-- الشريط الثابت العلوي -->
     <div class="top-bar">
-        <a href="tel:0540774058" class="top-btn btn-call">
-            <span>📞 اتصال المباشر: 0540774058</span>
+        <a href="tel:0540774058" class="top-btn btn-call-top">
+            <span>📞 اتصال: 0540774058</span>
         </a>
-        <a href="https://wa.me/966540774058" class="top-btn btn-whatsapp">
-            <span>💬 تواصل عبر الواتساب</span>
+        <a href="https://wa.me/966540774058" class="top-btn btn-wa-top">
+            <span>💬 واتساب مباشر</span>
         </a>
     </div>
 
@@ -239,13 +254,20 @@
         <div class="spacer"></div>
     </div>
 
-    <!-- الشريط الثابت السفلي -->
-    <div class="bottom-bar">
-        <a href="tel:0540774058" class="app-btn btn-call">
-            <span>📞 0540774058</span>
+    <!-- الأزرار العائمة الدائرية في الأسفل (يمين: اتصال | يسار: واتساب) -->
+    <div class="floating-buttons-container">
+        <!-- زر الاتصال الدائري (على اليمين) -->
+        <a href="tel:0540774058" class="circle-btn btn-call-circle" title="اتصال مباشر">
+            <svg viewBox="0 0 24 24">
+                <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+            </svg>
         </a>
-        <a href="https://wa.me/966540774058" class="app-btn btn-whatsapp">
-            <span>💬 واتساب مباشر</span>
+
+        <!-- زر الواتساب الدائري الحديث (على اليسار) -->
+        <a href="https://wa.me/966540774058" class="circle-btn btn-wa-circle" title="تواصل عبر الواتساب">
+            <svg viewBox="0 0 32 32">
+                <path d="M16 2a13.93 13.93 0 00-12 21L2 30l7.2-1.9A13.93 13.93 0 1016 2zm0 25.5a11.5 11.5 0 01-5.87-1.61l-.42-.25-4.36 1.14 1.16-4.25-.27-.44A11.51 11.51 0 1116 27.5zm6.31-8.62c-.35-.17-2.05-1.01-2.37-1.12-.31-.12-.54-.17-.77.17-.23.35-.9 1.12-1.1 1.35-.2.23-.4.26-.75.09a9.5 9.5 0 01-2.79-1.72 10.45 10.45 0 01-1.93-2.4c-.2-.35-.02-.54.15-.71.16-.16.35-.4.52-.6.18-.2.23-.35.35-.58.12-.23.06-.43-.03-.6-.09-.17-.77-1.86-1.06-2.55-.28-.67-.56-.58-.77-.59h-.66c-.23 0-.6.09-.91.43s-1.2 1.17-1.2 2.86 1.23 3.32 1.4 3.55c.17.23 2.42 3.7 5.87 5.19.82.35 1.46.56 1.96.72.82.26 1.57.22 2.16.14.66-.09 2.05-.84 2.34-1.65.29-.81.29-1.5.2-1.65-.08-.15-.31-.24-.66-.41z"/>
+            </svg>
         </a>
     </div>
 
