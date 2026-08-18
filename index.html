@@ -3,20 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>معلم دهانات وديكورات بالرياض</title>
+    <title>معلم دهانات وديكورات بالرياض | خبرة وجودة عالية</title>
     <style>
-        body { font-family: system-ui, sans-serif; background-color: #f8fafc; margin: 0; padding: 20px; direction: rtl; text-align: center; }
-        .container { max-width: 500px; margin: 40px auto; background: white; padding: 30px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
-        h1 { color: #1e293b; font-size: 22px; margin-bottom: 10px; }
-        p { color: #64748b; font-size: 15px; line-height: 1.6; }
-        .btn { display: block; background-color: #25d366; color: white; padding: 14px; border-radius: 10px; text-decoration: none; font-weight: bold; margin-top: 20px; }
+        :root {
+            --primary: #1e3a8a;
+            --accent: #25d366;
+            --dark: #0f172a;
+            --light: #f8fafc;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
+        body { background-color: var(--light); color: var(--dark); line-height: 1.6; }
+        
+        .header { background: var(--primary); color: white; padding: 40px 20px; text-align: center; border-bottom-left-radius: 24px; border-bottom-right-radius: 24px; }
+        .header h1 { font-size: 26px; margin-bottom: 10px; }
+        .header p { opacity: 0.9; font-size: 15px; }
+
+        .container { max-width: 600px; margin: auto; padding: 20px; }
+        
+        .card { background: white; padding: 20px; border-radius: 16px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .card h2 { color: var(--primary); font-size: 18px; margin-bottom: 12px; border-bottom: 2px solid var(--light); padding-bottom: 8px; }
+        
+        .services-list { list-style: none; }
+        .services-list li { padding: 8px 0; border-bottom: 1px dashed #e2e8f0; font-size: 15px; }
+        .services-list li:last-child { border: none; }
+        .services-list li::before { content: "✓ "; color: var(--accent); font-weight: bold; }
+
+        .features { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; text-align: center; }
+        .feature-box { background: #eff6ff; padding: 15px; border-radius: 12px; font-weight: bold; color: var(--primary); font-size: 14px; }
+
+        .cta-container { position: fixed; bottom: 0; left: 0; right: 0; background: white; padding: 12px 20px; box-shadow: 0 -4px 15px rgba(0,0,0,0.1); display: flex; gap: 10px; }
+        .btn { flex: 1; text-align: center; padding: 12px; border-radius: 10px; font-weight: bold; text-decoration: none; font-size: 15px; }
+        .btn-call { background: var(--primary); color: white; }
+        .btn-whatsapp { background: var(--accent); color: white; }
+
+        .spacer { height: 70px; }
     </style>
 </head>
 <body>
-    <div class="container">
+
+    <div class="header">
         <h1>معلم دهانات وديكورات بالرياض</h1>
-        <p>تنفيذ كافة أعمال الدهانات الداخلية والخارجية، بروفايل، فوم، وبديل الرخام بأعلى جودة وأفضل الأسعار.</p>
-        <a href="https://wa.me/966500000000" class="btn">تواصل معنا عبر الواتساب</a>
+        <p>تنفيذ جميع أعمال الدهانات الديكورية والحديثة بأعلى جودة وأنساب الأسعار</p>
     </div>
+
+    <div class="container">
+        
+        <div class="card">
+            <h2>خدماتنا</h2>
+            <ul class="services-list">
+                <li>دهانات داخلية وخارجية (جوتن - الجزيرة)</li>
+                <li>تركيب ديكورات الفوم والبديل للرخام والخشب</li>
+                <li>أعمال البروفايل والرشات الخارجية</li>
+                <li>معالجة التشققات والشرخ ورطوبة الجدران</li>
+                <li>ورق جدران وتعتيق وترخيم بكل الاحترافية</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>لماذا تختارنا؟</h2>
+            <div class="features">
+                <div class="feature-box">سرعة في التنفيذ</div>
+                <div class="feature-box">أسعار منافسة</div>
+                <div class="feature-box">نظافة العمل</div>
+                <div class="feature-box">خبرة طويلة بالرياض</div>
+            </div>
+        </div>
+
+        <div class="card" style="text-align: center;">
+            <h2>جاهزون للخدمة في جميع أحياء الرياض</h2>
+            <p style="font-size: 14px; color: #64748b;">تواصل معنا الآن للحصول على معاينة مجانية وخصم خاص على المساحات الكبيرة.</p>
+        </div>
+
+        <div class="spacer"></div>
+    </div>
+
+    <div class="cta-container">
+        <a href="tel:0500000000" class="btn btn-call">📞 اتصال مباشر</a>
+        <a href="https://wa.me/966500000000" class="btn btn-whatsapp">💬 واتساب</a>
+    </div>
+
 </body>
 </html>
